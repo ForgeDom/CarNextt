@@ -1,13 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import dynamic from 'next/dynamic';
 import Home from "../../../../components/pages/home";
 import Game from "../../../../components/pages/game";
 import Navigation from "../../../../components/Navigation";
 import MusicPlayer from "../../../../components/MusicPlayer";
 
+const DynamicHome = dynamic(() => import('../../../../components/pages/home'), { ssr: false });
+const DynamicGame = dynamic(() => import('../../../../components/pages/game'), { ssr: false });
+const DynamicNavigation = dynamic(() => import('../../../../components/Navigation'), { ssr: false });
+const DynamicMusicPlayer = dynamic(() => import('../../../../components/MusicPlayer'), { ssr: false });
+
 export default function OldTimer() {
     const [subscribed, setSubscribed] = useState<boolean>(false);
-    const [mainContent, setMainContent] = useState<React.JSX.Element>(<Home />);
+    const [mainContent, setMainContent] = useState<React.JSX.Element>(<DynamicHome />);
 
     useEffect(() => {
         if (typeof window === "undefined") return;
@@ -86,8 +92,8 @@ export default function OldTimer() {
     return (
         <>
             <header>
-                <Navigation setMainContent={setMainContent} />
-                <MusicPlayer />
+                <DynamicNavigation setMainContent={setMainContent} />
+                <DynamicMusicPlayer />
             </header>
 
             <main>
@@ -125,7 +131,7 @@ export default function OldTimer() {
                 <p className="small-link">
                     <a href="#" onClick={(e) => {
                         e.preventDefault();
-                        setMainContent(<Game />);
+                        setMainContent(<DynamicGame />);
                     }}>
                         Хочете пройти маленький інтерактивчик?
                     </a>
