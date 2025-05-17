@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 
@@ -12,10 +12,12 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-      const bg = document.querySelector('.background-image-container') as HTMLElement;
+  useEffect(() => {
+    const bg = document.querySelector('.background-image-container') as HTMLElement | null;
     if (bg) {
       bg.style.display = 'none';
     }
+  }, []);
     
 
   async function handleSignUp(e: React.FormEvent) {
