@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Фірмові наліпки",
+        "price": 99.99,
+        "link": "https://i.postimg.cc/0ymj6FGj/stickers.jpg",
+        "image": { "fields": { "file": { "url": "../merch_images/stickers.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Чорна футболка з логотипом",
+        "price": 399.99,
+        "link": "https://i.postimg.cc/0ymj6FGj/stickers.jpg",
+        "image": { "fields": { "file": { "url": "../merch_images/t-shirt-black.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "Сіра футболка з логотипом",
+        "price": 399.99,
+        "link": "https://i.postimg.cc/0ymj6FGj/stickers.jpg",
+        "image": { "fields": { "file": { "url": "../merch_images/t-shirt-gray.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Біла футболка з логотипом",
+        "price": 399.99,
+        "link": "https://res.cloudinary.com/dar5kyzjq/image/upload/v1744996258/t-shirt-white.jpg",
+        "image": { "fields": { "file": { "url": "../merch_images/t-shirt-white.jpg" } } }
+      }
+    }
+  ]
+}

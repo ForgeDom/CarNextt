@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+.history-section {
+  padding: 20px;
+}
+
+h1, h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.car-item {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.car-photo {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 auto;
+  display: block;
+}
+
+.car-text-container {
+  width: 40%;
+  font-size: 1.2em;
+  text-align: justify;
+}
+
+.car-description {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.car-item:nth-child(odd) {
+  flex-direction: row-reverse; /* Фото справа, текст зліва */
+}
+
+.car-item:nth-child(even) {
+  flex-direction: row; /* Фото зліва, текст справа */
+}
+
+p {
+  margin: 0;
+}

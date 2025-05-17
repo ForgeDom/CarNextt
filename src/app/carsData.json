@@ -1,0 +1,292 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "name": "Alfa Romeo 8C 2900",
+        "category": "classic",
+        "suitableFor": {
+          "age": [40, 80],
+          "weight": [60, 100],
+          "music": ["jazz", "classic"],
+          "zodiac": ["libra", "capricorn"]
+        },
+        "image": "/cars/classic/alfa-romeo-8c-2900.jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Aston Martin DB4",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [30, 60],
+          "weight": [50, 90],
+          "music": ["jazz", "blues"],
+          "zodiac": ["taurus", "virgo"]
+        },
+        "image": "/cars/luxury/aston-martin-db4.jpeg"
+      },
+      {
+        "id": 3,
+        "name": "Austin Healey 3000",
+        "category": "classic",
+        "suitableFor": {
+          "age": [35, 70],
+          "weight": [55, 95],
+          "music": ["rock", "blues"],
+          "zodiac": ["leo", "sagittarius"]
+        },
+        "image": "/cars/classic/austin-healey-3000.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Bentley S1 Continental",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [40, 75],
+          "weight": [70, 110],
+          "music": ["classic", "opera"],
+          "zodiac": ["scorpio", "pisces"]
+        },
+        "image": "/cars/luxury/bentley-s1-continental.jpeg"
+      },
+      {
+        "id": 5,
+        "name": "BMW 3.0 CSL",
+        "category": "sport",
+        "suitableFor": {
+          "age": [25, 50],
+          "weight": [50, 85],
+          "music": ["rock", "electronic"],
+          "zodiac": ["aries", "aquarius"]
+        },
+        "image": "/cars/sport/bmw-3-0-csl.jpeg"
+      },
+      {
+        "id": 6,
+        "name": "Cadillac Eldorado",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [45, 80],
+          "weight": [80, 120],
+          "music": ["jazz", "soul"],
+          "zodiac": ["cancer", "libra"]
+        },
+        "image": "/cars/luxury/cadillac-eldorado.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Chevy Bel Air",
+        "category": "classic",
+        "suitableFor": {
+          "age": [30, 65],
+          "weight": [60, 100],
+          "music": ["rock", "country"],
+          "zodiac": ["gemini", "leo"]
+        },
+        "image": "/cars/classic/chevy-bel-air.jpeg"
+      },
+      {
+        "id": 8,
+        "name": "Chevy El Camino",
+        "category": "muscle",
+        "suitableFor": {
+          "age": [25, 55],
+          "weight": [70, 110],
+          "music": ["rock", "metal"],
+          "zodiac": ["scorpio", "aries"]
+        },
+        "image": "/cars/muscle/chevy-el-camino.jpeg"
+      },
+      {
+        "id": 9,
+        "name": "Duesenberg J",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [50, 85],
+          "weight": [75, 110],
+          "music": ["classic", "jazz"],
+          "zodiac": ["capricorn", "virgo"]
+        },
+        "image": "/cars/luxury/deusenberg-j.jpg"
+      },
+      {
+        "id": 10,
+        "name": "Ford Thunderbird",
+        "category": "classic",
+        "suitableFor": {
+          "age": [35, 70],
+          "weight": [65, 105],
+          "music": ["blues", "rock"],
+          "zodiac": ["taurus", "cancer"]
+        },
+        "image": "/cars/classic/ford-thunderbird.jpeg"
+      },
+      {
+        "id": 11,
+        "name": "Jaguar E-Type",
+        "category": "sport",
+        "suitableFor": {
+          "age": [30, 60],
+          "weight": [55, 90],
+          "music": ["rock", "blues"],
+          "zodiac": ["leo", "sagittarius"]
+        },
+        "image": "/cars/sport/jaguar-e-type.jpeg"
+      },
+      {
+        "id": 12,
+        "name": "Lamborghini Miura",
+        "category": "sport",
+        "suitableFor": {
+          "age": [25, 45],
+          "weight": [50, 80],
+          "music": ["electronic", "metal"],
+          "zodiac": ["aries", "gemini"]
+        },
+        "image": "/cars/sport/lambo-miura.jpeg"
+      },
+      {
+        "id": 13,
+        "name": "Lincoln Continental",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [40, 75],
+          "weight": [75, 115],
+          "music": ["jazz", "soul"],
+          "zodiac": ["libra", "pisces"]
+        },
+        "image": "/cars/luxury/lincoln-continental.jpg"
+      },
+      {
+        "id": 14,
+        "name": "Lotus Esprit",
+        "category": "sport",
+        "suitableFor": {
+          "age": [25, 50],
+          "weight": [50, 85],
+          "music": ["electronic", "pop"],
+          "zodiac": ["aquarius", "virgo"]
+        },
+        "image": "/cars/sport/lotus-esprit.jpeg"
+      },
+      {
+        "id": 15,
+        "name": "Maserati 3500 GT Spyder",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [35, 65],
+          "weight": [60, 95],
+          "music": ["classic", "jazz"],
+          "zodiac": ["scorpio", "capricorn"]
+        },
+        "image": "/cars/luxury/maserati-3500-gt-spyder.jpeg"
+      },
+      {
+        "id": 16,
+        "name": "Mercedes-Benz Gullwing",
+        "category": "classic",
+        "suitableFor": {
+          "age": [40, 75],
+          "weight": [65, 100],
+          "music": ["classic", "blues"],
+          "zodiac": ["taurus", "cancer"]
+        },
+        "image": "/cars/classic/mercedes-benz-gullwing.jpeg"
+      },
+      {
+        "id": 17,
+        "name": "Packard Clipper",
+        "category": "classic",
+        "suitableFor": {
+          "age": [45, 80],
+          "weight": [70, 110],
+          "music": ["jazz", "soul"],
+          "zodiac": ["leo", "libra"]
+        },
+        "image": "/cars/classic/packard-clipper.jpg"
+      },
+      {
+        "id": 18,
+        "name": "Plymouth Barracuda",
+        "category": "muscle",
+        "suitableFor": {
+          "age": [25, 55],
+          "weight": [65, 100],
+          "music": ["rock", "metal"],
+          "zodiac": ["scorpio", "aries"]
+        },
+        "image": "/cars/muscle/plymouth-barracuda.jpg"
+      },
+      {
+        "id": 19,
+        "name": "Pontiac Bonneville",
+        "category": "classic",
+        "suitableFor": {
+          "age": [35, 70],
+          "weight": [70, 105],
+          "music": ["rock", "blues"],
+          "zodiac": ["gemini", "leo"]
+        },
+        "image": "/cars/classic/pontiac-bonneville.jpeg"
+      },
+      {
+        "id": 20,
+        "name": "Pontiac Firebird",
+        "category": "muscle",
+        "suitableFor": {
+          "age": [25, 50],
+          "weight": [60, 95],
+          "music": ["metal", "rock"],
+          "zodiac": ["aries", "sagittarius"]
+        },
+        "image": "/cars/muscle/pontiac-firebird.jpg"
+      },
+      {
+        "id": 21,
+        "name": "Rolls-Royce Dawn Drophead",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [50, 85],
+          "weight": [75, 115],
+          "music": ["classic", "opera"],
+          "zodiac": ["capricorn", "virgo"]
+        },
+        "image": "/cars/luxury/rolls-royce-dawn-drophead.jpeg"
+      },
+      {
+        "id": 22,
+        "name": "Rolls-Royce Phantom I",
+        "category": "luxury",
+        "suitableFor": {
+          "age": [45, 80],
+          "weight": [80, 120],
+          "music": ["opera", "jazz"],
+          "zodiac": ["pisces", "scorpio"]
+        },
+        "image": "/cars/luxury/rolls-royce-phantom-i.jpeg"
+      },
+      {
+        "id": 23,
+        "name": "Shelby Cobra",
+        "category": "sport",
+        "suitableFor": {
+          "age": [25, 55],
+          "weight": [50, 85],
+          "music": ["rock", "metal"],
+          "zodiac": ["leo", "aries"]
+        },
+        "image": "/cars/sport/shelby-cobra.jpg"
+      },
+      {
+        "id": 24,
+        "name": "Volvo P1800",
+        "category": "classic",
+        "suitableFor": {
+          "age": [30, 65],
+          "weight": [55, 90],
+          "music": ["pop", "rock"],
+          "zodiac": ["virgo", "libra"]
+        },
+        "image": "/cars/classic/volvo-p1800.jpeg"
+      }
+    ]
+  }
