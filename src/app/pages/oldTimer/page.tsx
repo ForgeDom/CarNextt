@@ -1,90 +1,93 @@
 "use client";
-import emailjs from "@emailjs/browser";
 import React, { useEffect, useState } from "react";
 import Home from "../../../../components/pages/home";
 import Game from "../../../../components/pages/game";
 import Navigation from "../../../../components/Navigation";
 import MusicPlayer from "../../../../components/MusicPlayer";
 
-export default function oldTimer() {
+export default function OldTimer() {
     const [subscribed, setSubscribed] = useState<boolean>(false);
-    const [email, setEmail] = useState("");
-    const [mainContent, setMainContent] = useState<React.JSX.Element>(<Home/>);
+    const [mainContent, setMainContent] = useState<React.JSX.Element>(<Home />);
 
     useEffect(() => {
+        if (typeof window === "undefined") return;
+
         const storedValue = localStorage.getItem("subscribed");
         if (storedValue !== null) {
             const parsedValue = JSON.parse(storedValue) as boolean;
             setSubscribed(parsedValue);
-            if (parsedValue) {
-                document.querySelector(".Subscribed")!.innerHTML =
-                    "Ви успішно підписались на розсилку від клубу OLDTIMER";
-                document.querySelector(".subscribe-form button")!.textContent =
-                    "Відписатись";
+
+            const subMsg = document.querySelector(".Subscribed");
+            const btn = document.querySelector(".subscribe-form button");
+
+            if (parsedValue && subMsg && btn) {
+                subMsg.innerHTML = "Ви успішно підписались на розсилку від клубу OLDTIMER";
+                btn.textContent = "Відписатись";
             }
         }
     }, []);
 
-    function subscribe(event: React.MouseEvent | React.KeyboardEvent) {
-    event.preventDefault();
-    const emailEl = document.getElementById("emailInput") as HTMLInputElement;
+    async function subscribe(event: React.MouseEvent | React.KeyboardEvent) {
+        event.preventDefault();
 
-    if (emailEl.value) {
-        const email = emailEl.value;
-        console.log(email);
+        if (typeof window === "undefined") return;
+
+        const emailEl = document.getElementById("emailInput") as HTMLInputElement | null;
+        if (!emailEl || !emailEl.value) return;
+
+        const email = emailEl.value.trim();
         emailEl.value = "";
+
         if (!validateEmail(email)) {
             document.querySelector(".Subscribed")!.innerHTML =
                 "Некоректно вказана електронна пошта";
             return;
         }
 
-        emailjs.send(
-            "service_y0v138t",
-            "template_yk0qz4s",
-            { email },
-            "EKd1zTLqaMemtv6yM"
-        ).then(
-            () => {
-                console.log("Email sent successfully");
-                setSubscribed(true);
-                localStorage.setItem("subscribed", JSON.stringify(true));
-                document.querySelector(".subscribe-form button")!.textContent =
-                    "Відписатись";
-                document.querySelector(".Subscribed")!.innerHTML =
-                    "Ви успішно підписались на розсилку від клубу OLDTIMER";
-            },
-            (error) => {
-                console.error("Email sending failed", error);
-                document.querySelector(".Subscribed")!.innerHTML =
-                    "Помилка при надсиланні листа. Спробуйте пізніше.";
-            }
-        );
-    }
-}
+        try {
+            const emailjs = await import("@emailjs/browser");
 
+            await emailjs.send(
+                "service_y0v138t",
+                "template_yk0qz4s",
+                { email },
+                "EKd1zTLqaMemtv6yM"
+            );
+
+            setSubscribed(true);
+            localStorage.setItem("subscribed", JSON.stringify(true));
+
+            document.querySelector(".subscribe-form button")!.textContent = "Відписатись";
+            document.querySelector(".Subscribed")!.innerHTML =
+                "Ви успішно підписались на розсилку від клубу OLDTIMER";
+        } catch (error) {
+            console.error("Email sending failed", error);
+            document.querySelector(".Subscribed")!.innerHTML =
+                "Помилка при надсиланні листа. Спробуйте пізніше.";
+        }
+    }
+
+    function unsubscribe(event: React.MouseEvent) {
+        event.preventDefault();
+        if (typeof window === "undefined") return;
+
+        setSubscribed(false);
+        localStorage.removeItem("subscribed");
+
+        document.querySelector(".subscribe-form button")!.textContent = "Підписатись";
+        document.querySelector(".Subscribed")!.innerHTML = "";
+    }
 
     function validateEmail(email: string) {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailPattern.test(email);
     }
 
-    function unsubscribe(event: React.MouseEvent) {
-        event.preventDefault();
-        setSubscribed(false);
-        localStorage.removeItem("subscribed");
-        document.querySelector(".subscribe-form button")!.textContent =
-            "Підписатись";
-        document.querySelector(".Subscribed")!.innerHTML = "";
-    }
-
     return (
         <>
             <header>
-                <Navigation
-                    setMainContent={setMainContent}
-                />
-                <MusicPlayer/>
+                <Navigation setMainContent={setMainContent} />
+                <MusicPlayer />
             </header>
 
             <main>
@@ -104,8 +107,7 @@ export default function oldTimer() {
                         placeholder="Ваша електронна пошта"
                         id="emailInput"
                         onKeyDown={(e) => {
-                            if (e.key === 'Enter')
-                                subscribe(e);
+                            if (e.key === 'Enter') subscribe(e);
                         }}
                         required
                     />
@@ -113,10 +115,7 @@ export default function oldTimer() {
                         type="submit"
                         className="submitBtn"
                         onClick={(e) => {
-                            if (subscribed)
-                                unsubscribe(e);
-                            else
-                                subscribe(e);
+                            subscribed ? unsubscribe(e) : subscribe(e);
                         }}
                     >
                         {subscribed ? "Відписатись" : "Підписатись"}
@@ -124,7 +123,10 @@ export default function oldTimer() {
                 </form>
                 <p className="Subscribed"></p>
                 <p className="small-link">
-                    <a href="#" onClick={(e) => { e.preventDefault(); setMainContent(<Game/>) }}>
+                    <a href="#" onClick={(e) => {
+                        e.preventDefault();
+                        setMainContent(<Game />);
+                    }}>
                         Хочете пройти маленький інтерактивчик?
                     </a>
                 </p>
@@ -148,5 +150,5 @@ export default function oldTimer() {
                 </div>
             </footer>
         </>
-    )
+    );
 }
